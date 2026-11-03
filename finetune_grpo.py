@@ -321,12 +321,12 @@ reward_functions = {
 # helpers
 def free_port() -> int:
     """pick an available tcp port for torchrun master."""
-    with socket.socket(socket.af_inet, socket.sock_stream) as s:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind(("", 0))
         return s.getsockname()[1]
 
-def build_arg_parser() -> argparse.argumentparser:
-    p = argparse.argumentparser("grpo deepspeed fine-tune with dev loss early stopping")
+def build_arg_parser() -> argparse.ArgumentParser:
+    p = argparse.ArgumentParser("GRPO DeepSpeed fine-tune with dev loss early stopping")
     # paths
     p.add_argument("--train_file", required=True)
     p.add_argument("--dev_file",   required=True)
