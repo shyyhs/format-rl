@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# VS Code Local History extension
+.history/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Training outputs
+checkpoints/
+wandb/
+runs/
+*.log
